@@ -3,10 +3,12 @@ from otree.api import (
     Currency as c, currency_range
 )
 
-author = 'Your name here'
+author = 'Alex Dzionara, Mario Sharfbillig, Philipp Chapkovski' \
+         'chapkovski@gmail.com'
 
 doc = """
-Your app description
+This a variation of Trust game where Trusting decisions are reframed as 'Investment into a project'.
+
 """
 
 
