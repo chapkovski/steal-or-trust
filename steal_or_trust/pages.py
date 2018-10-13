@@ -2,15 +2,36 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+def vars_for_all_templates(self):
+    return {'instructions': '/Instructions.html'.format(self.group.treatment),
+            'belief_instructions': '/BeliefInstructions.html'.format(self.group.treatment)
+            }
 
-class MyPage(Page):
-    pass
+
+class Intro(Page):
+    ...
+
+class BeliefIntro(Page):
+    ...
+
+class SenderDecision(Page):
+    ...
 
 
-class ResultsWaitPage(WaitPage):
+class BeforeReceiverWP(WaitPage):
+    ...
 
-    def after_all_players_arrive(self):
-        pass
+
+class ReceiverDecision(Page):
+    ...
+
+
+class BeliefElicitation(Page):
+    ...
+
+
+class BeforeResultsWP(WaitPage):
+    ...
 
 
 class Results(Page):
@@ -18,7 +39,12 @@ class Results(Page):
 
 
 page_sequence = [
-    MyPage,
-    ResultsWaitPage,
-    Results
+    Intro,
+    BeliefIntro,
+    SenderDecision,
+    BeforeReceiverWP,
+    ReceiverDecision,
+    BeliefElicitation,
+    BeforeResultsWP,
+    Results,
 ]
